@@ -1,0 +1,11 @@
+/pretrained_ckpt
+*.caffemodel
+*.csv
+*.jpg
+*.png
+*.mp4
+
+model/*
+!model/
+bak/
+**/__pycache__/
