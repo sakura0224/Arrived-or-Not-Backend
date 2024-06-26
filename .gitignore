@@ -6,6 +6,6 @@
 *.mp4
 
 model/*
-!model/
+!model/.gitkeep
 bak/
 **/__pycache__/
