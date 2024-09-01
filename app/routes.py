@@ -113,7 +113,7 @@ last_timestamp = ""
 def read_latest_stats():
     global last_timestamp
     try:
-        with open('attention_log.csv', mode='r') as file:
+        with open('attention_log.csv', mode='r') as file: # attention_log.csv文件提供了实时的统计数据
             csv_reader = csv.reader(file)
             rows = list(csv_reader)
             if rows:
@@ -143,7 +143,7 @@ def kill_process_and_children(process_pid):
 @router.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     process = await asyncio.create_subprocess_exec(
-        "D:/miniconda3/envs/fer/python.exe", "face/headpose.py",
+        "D:/miniconda3/envs/fer/python.exe", "face/headpose.py", # 修改你的python路径
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE
     )

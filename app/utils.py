@@ -29,7 +29,7 @@ def authenticate_token(credentials: HTTPAuthorizationCredentials = Depends(secur
 
 
 def run_script(script, image_path):
-    process = subprocess.Popen(['D:/miniconda3/envs/fer/python.exe', script, image_path],
+    process = subprocess.Popen(['D:/miniconda3/envs/fer/python.exe', script, image_path],   # 请根据实际情况修改路径
                                stdout=subprocess.PIPE,
                                stderr=subprocess.PIPE)
     stdout, stderr = process.communicate()
@@ -43,6 +43,7 @@ def run_script(script, image_path):
     except json.JSONDecodeError:
         raise Exception("Error parsing script output")
 
+# 用于启动时显示本机IP地址
 def get_ip():
     import psutil
     import socket
