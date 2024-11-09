@@ -1,30 +1,28 @@
-# 到没到——后端
+# Arrived or Not Backend
 
-## 项目简介
+[中文](https://github.com/sakura0224/Arrived-or-Not-Backend/README_cn.md)
 
-采用FastAPI框架搭建的后端服务，提供到没到的API接口。且同时包含了算法模块。
+## Project Overview
 
-## 项目结构
+A backend service built using the FastAPI framework, providing API interfaces for "Is It There" and incorporating algorithm modules.
 
-项目主目录下，main.py为主入口文件，启动后会自动下载模型。  
+## Project Structure
 
-app文件夹为FastAPI的主体代码文件，其中：
-config.py为配置文件，routers.py为路由文件，utils.py为工具文件，models.py为主要是为与Flutter进行token交换而创建的请求体，database.py为数据库文件。
+In the main project directory, `main.py` serves as the main entry file, which will automatically download the model upon startup.
 
-face文件夹为人脸识别相关代码存放地。包含人脸识别的deepface和头部姿态估计的6DRepNet。  
+The `app` folder contains the core FastAPI code files, including:
 
-library为资源文件存放地，包括视频文件、图片文件等。  
+- `config.py`: Configuration file
+- `routers.py`: Routing file
+- `utils.py`: Utility file
+- `models.py`: Request body created primarily for token exchange with Flutter
+- `database.py`: Database file
 
-model为模型文件存放地，包括头部姿态模型、YOLO人脸检测模型等。下载地址为：  
-[6DRepNet_300W_LP_AFLW2000.pth](https://drive.google.com/drive/folders/1V1pCV0BEW3mD-B9MogGrz_P91UhTtuE_)  
-[yolov8n-face.pt](https://drive.google.com/file/d/1qcr9DbgsX3ryrz2uU8w4Xm3cOrRywXqb/view?usp=sharing)
+The `face` folder houses facial recognition-related code, containing the DeepFace for facial recognition and 6DRepNet for head pose estimation.
 
-bak文件夹是由node.js开发的旧版本后端代码，现迁移至FastAPI后已弃用，可作为参考。
+The `library` folder stores resource files, including video and image files.
 
-## 注意事项
+The `model` folder stores model files, including the head pose model and YOLO face detection model. Download links are as follows:
 
-1. 可以Fork本项目后，自行开发。
-2. 如需使用课堂专注度检测与推流功能，需要安装ffmpeg，并运行根目录下的`mediamtx.exe`文件。
-3. 推流使用的是抓取摄像头的RTSP流，也可改为cv2抓取电脑摄像头。总之，地址和端口需配置正确。
-4. 关于FastAPI的更多信息，请参考[FastAPI官方文档](https://fastapi.tiangolo.com/zh/)
-5. 头部姿态估计模型6DRepNet的更多信息，请参考[6DRepNet](https://github.com/thohemp/6DRepNet/)
+- [6DRepNet_300W_LP_AFLW2000.pth](https://drive.google.com/drive/folders/1V1pCV0BEW3mD-B9MogGrz_P91UhTtuE_)
+- [yolov8n-face.pt](https://drive.google.com/drive/folders/1V1pCV0BEW3mD-B9MogGrz_P91UhTtuE_)
